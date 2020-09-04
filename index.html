@@ -1,317 +1,67 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<!doctype html>
+<html data-current="home" lang="en-US">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>mkawia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
 
-    <link rel="stylesheet" href="style.css" media="screen" />
+        body {
+            margin: 0
+        }
+
+        html {
+            font-family: Avenir, Helvetica, sans-serif;
+            background: #e4e4d5
+        }
+
+        article {
+            margin: 3rem 10vw 3rem 4vw
+        }
+
+        @media (min-width:900px) {
+            article {
+                margin: 3rem 10vw 3rem 4vw;
+                display: grid;
+                grid-template-columns: calc(.1rem + .5vw) max-content 5rem min-content 1fr minmax(30ch, 50ch) 1fr;
+                grid-template-rows: calc(1rem + 1vw) 50px min-content min-content 1fr;
+                gap: 0 1rem
+            }
+
+            article::after {
+                border: 8px solid #d55349;
+                grid-row: 2/5;
+                grid-column: 2/4;
+                z-index: -1;
+                content: ''
+            }
+        }
 
 
-    <link href='https://fonts.googleapis.com/css?family=Righteous&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
-
-    <script src="scripts/modernizr.js"></script>
-
+        section {
+            grid-column: 6/7;
+            grid-row: 4/6;
+            margin-top: calc(1rem + 2vh);
+            font-size: 1.1rem
+        }
+    </style>
 </head>
 
 <body>
+    <main>
+        <article>
 
-
-
-    <a style="display:none;" href="#cd-nav" class="cd-nav-trigger">Menu
-        <span class="cd-nav-icon"></span>
-
-        <svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-            <circle fill="transparent" stroke="#90D4C5" stroke-width="2" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
-        </svg>
-    </a>
-
-    <div id="cd-nav" class="cd-nav">
-        <div class="cd-navigation-wrapper">
-            <div class="cd-half-block">
-
-
-                <nav>
-                    <ul class="cd-primary-nav">
-                        <li>
-                            <a href="index.html" class="selected">Showcase</a>
-                        </li>
-                        <li>
-                            <a href="news.html">News</a>
-                        </li>
-                        <li>
-                            <a href="profile.html">Profile</a>
-                        </li>
-                        <li>
-                            <a href="#">Docs</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- .cd-half-block -->
-
-            <div class="cd-half-block">
-                <address>
-                    <ul class="cd-contact-info">
-                        <li>
-                            <a href="mailto:info@myemail.co">info@myemail.co</a>
-                        </li>
-                        <li>0244-12345678</li>
-                    </ul>
-                    <ul class="cd-contact-socials">
-                        <li>
-                            <a href="#0">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="#0">Behance</a>
-                        </li>
-                        <li>
-                            <a href="#0">Dribbble</a>
-                        </li>
-                    </ul>
-                </address>
-            </div>
-            <!-- .cd-half-block -->
-        </div>
-        <!-- .cd-navigation-wrapper -->
-    </div>
-    <!-- .cd-nav -->
-
-    <div class="site-container">
-
-        <header class="site-header cf">
-            <div class="site-title" style="display:none;">
-                <a href="index.html">mkawia</a>
-            </div>
-
-            <div class="cf"></div>
-
-            <div class="site-tagline">
-                <p>Hello I'm
-                    <strong>Mohamed Kawia.</strong> I'm a full-stack software developer . </p>
-            </div>
-
-        </header>
-        <!-- / .site-header -->
-
-        <section class="site-content">
-
-
-            <div class="projects-feed cf">
-
-                <article class="project cf">
-                    <a href="gothomis.html" title="TAMISEMI Hospital System">
-                        <div class="thumb">
-                            <div data-picture data-alt="">
-                                <div data-src="img/portfolio-1.jpg"></div>
-
-                                <!--[if (lt IE 9) & (!IEMobile)]>
-                                <div data-src="img/portfolio-1.jpg"></div>
-                                <![endif]-->
-
-                                <noscript>
-                                    <img src="img/portfolio-1.jpg" alt="" />
-                                </noscript>
-                            </div>
-                        </div>
-
-                        <div class="project-content-container">
-                            <div class="project-content">
-                                <div class="table">
-                                    <div class="table-cell">
-                                        <h2 class="thumbnail-title">TAMISEMI- GoTHoMiS</h2>
-
-                                        <p class="thumbnail-description">UI redesign,branding</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="overlay"></div>
-                    </a>
-                </article>
-                <article class="project cf">
-                    <a href="swahilipos.html" title="SwahiliPoS">
-                        <div class="thumb">
-                            <div data-picture data-alt="">
-                                <div data-src="img/portfolio-5.jpg"></div>
-
-                                <!--[if (lt IE 9) & (!IEMobile)]>
-                                <div data-src="img/portfolio-2.jpg"></div>
-                                <![endif]-->
-
-                                <noscript>
-                                    <img src="img/portfolio-5.jpg" alt="" />
-                                </noscript>
-                            </div>
-                        </div>
-
-                        <div class="project-content-container">
-                            <div class="project-content">
-                                <div class="table">
-                                    <div class="table-cell">
-                                        <h2 class="thumbnail-title">Swahili PoS</h2>
-
-                                        <p class="thumbnail-description">
-                                            A demo point of sale app in swahili</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="overlay"></div>
-                    </a>
-                </article>
-                <article class="project cf">
-                    <a href="kaunta.html" title="KauntaPoS">
-                        <div class="thumb">
-                            <div data-picture data-alt="">
-                                <div data-src="img/portfolio-3.jpg"></div>
-
-                                <!--[if (lt IE 9) & (!IEMobile)]>
-                                <div data-src="img/portfolio-3.jpg"></div>
-                                <![endif]-->
-
-                                <noscript>
-                                    <img src="img/portfolio-3.jpg" alt="" />
-                                </noscript>
-                            </div>
-                        </div>
-
-                        <div class="project-content-container">
-                            <div class="project-content">
-                                <div class="table">
-                                    <div class="table-cell">
-                                        <h2 class="thumbnail-title">Kaunta PoS</h2>
-
-                                        <p class="thumbnail-description">Full-stack development and branding</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="overlay"></div>
-                    </a>
-                </article>
-                <article class="project cf">
-                    <a href="gongali.html" title="Gongali Model SMS Sales System">
-                        <div class="thumb">
-                            <div data-picture data-alt="">
-                                <div data-src="img/portfolio-4.jpg"></div>
-
-                                <!--[if (lt IE 9) & (!IEMobile)]>
-                                <div data-src="img/portfolio-4.jpg"></div>
-                                <![endif]-->
-
-                                <noscript>
-                                    <img src="img/portfolio-4.jpg" alt="" />
-                                </noscript>
-                            </div>
-                        </div>
-
-                        <div class="project-content-container">
-                            <div class="project-content">
-                                <div class="table">
-                                    <div class="table-cell">
-                                        <h2 class="thumbnail-title">Gongali Model sales system</h2>
-
-                                        <p class="thumbnail-description">SMS API design and implementation</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="overlay"></div>
-                    </a>
-                </article>
-                <article class="project cf">
-                    <a href="ujumbe.html" title="KCMC Research Institute SMS system">
-                        <div class="thumb">
-                            <div data-picture data-alt="">
-                                <div data-src="img/portfolio-2.jpg"></div>
-
-                                <!--[if (lt IE 9) & (!IEMobile)]>
-                                <div data-src="img/portfolio-5.jpg"></div>
-                                <![endif]-->
-
-                                <noscript>
-                                    <img src="img/portfolio-2.jpg" alt="" />
-                                </noscript>
-                            </div>
-                        </div>
-
-                        <div class="project-content-container">
-                            <div class="project-content">
-                                <div class="table">
-                                    <div class="table-cell">
-                                        <h2 class="thumbnail-title">KCMC Research sms project</h2>
-
-                                        <p class="thumbnail-description">API design</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="overlay"></div>
-                    </a>
-                </article>
-                <article class="project cf">
-                    <a href="paytan.html" title="Paytan Payroll System">
-                        <div class="thumb">
-                            <div data-picture data-alt="">
-                                <div data-src="img/portfolio-6.jpg"></div>
-
-                                <!--[if (lt IE 9) & (!IEMobile)]>
-                                <div data-src="img/portfolio-6.jpg"></div>
-                                <![endif]-->
-
-                                <noscript>
-                                    <img src="img/portfolio-6.jpg" alt="" />
-                                </noscript>
-                            </div>
-                        </div>
-
-                        <div class="project-content-container">
-                            <div class="project-content">
-                                <div class="table">
-                                    <div class="table-cell">
-                                        <h2 class="thumbnail-title">Paytan payroll system</h2>
-
-                                        <p class="thumbnail-description">Full-stack development and Product design</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="overlay"></div>
-                    </a>
-                </article>
-                <!--END .projects-feed-->
-            </div>
-
-            <!--END .site-content-->
-        </section>
-
-        <footer class="site-footer cf">
-            <p class="footer-text">© Copyright 2018 </p>
-
-        </footer>
-        <!--END .site-container-->
-    </div>
-
-    <script src="scripts/jquery-2.1.4.min.js"></script>
-    <script src="scripts/jquery.fitvids.js"></script>
-    <script src="scripts/jquery.imagesloaded.min.js"></script>
-    <script src="scripts/main.js"></script>
-
-
+            <section>Hi. I’m Mohamed Kawia.<p>I'm a full-stack software developer based in Arusha, Tanzania. </p>
+                <p> I'm especially interested in building MVPs. </p>
+                <p style="color:#000080;">send2kawia@gmail.com</p>
+            </section>
+            <div class="red-box"></div>
+        </article>
+    </main>
 </body>
 
 </html>
