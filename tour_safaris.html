@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzania Safari Specialists - African Tailor Made Safari Operators</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/bundle.css">
+
+
+
+</head>
+
+<body>
+
+
+
+
+    <!--drawer-->
+    <section class="drawer drawer--left" id="page-drawer-target" data-drawer-target>
+        <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+        <div class="drawer__wrapper">
+            <div class="drawer__header">
+                <span>&nbsp;</span>
+                <button class="drawer-closer" data-drawer-close aria-label="Close Drawer">
+                    <svg viewbox="0 0 40 40">
+                        <path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+                    </svg>
+                </button>
+            </div>
+            <div class="drawer__content">
+
+                <ul id="drawer-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tour_safaris">Tour & Safaris</a></li>
+                    <li><a href="/destination">Destinations</a></li>
+                    <li><a href="/tour_experiences">Tour Experiences</a></li>
+                    <li><a href="/about">About Jairos Adventures</a></li>
+                    <li data-drawer-close id="drawer-contact-us">Contact us</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal micromodal-slide" id="contact-form-modal" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+                <div class="modal__header">
+                    <h2 class="modal__title" id="contact-modal-title">
+                        Contact us
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </div>
+                <div class="modal__content" id="contact-form-content">
+                    <div class="contact-form-row">
+                        <label>Your name</label>
+                        <input id="modal-name-input" type="text" />
+                    </div>
+                    <div class="contact-form-row">
+                        <label>Your email</label>
+                        <input id="modal-email-input" type="email" />
+                    </div>
+                    <div class="contact-form-row">
+                        <label>Subject</label>
+                        <input id="modal-subject-input" type="text" />
+                    </div>
+                    <div class="contact-form-row">
+                        <textarea id="contact-modal-message-textarea" placeholder="Message" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button id="submit-contact-btn">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header id="page-header">
+
+        <!-- nav menu-->
+        <div id="page-nav-wrapper">
+            <div id="page-nav">
+                <!--contact button-->
+                <button id="contact-form-btn">
+                    <svg id="contact-form-icon" viewBox="0 0 60 60">
+                        <path d=" M54 2H6C2.748 2 0 4.748 0 8v33c0 3.252 2.748 6 6 6h28.558l9.702 10.673A1.002 1.002 0 0 0 46 57V47h8c3.252 0 6-2.748 6-6V8c0-3.252-2.748-6-6-6zM12 15h15a1 1 0 1 1 0 2H12a1 1 0 1 1 0-2zm34 18H12a1 1 0 1 1 0-2h34a1 1 0 1 1 0 2zm0-8H12a1 1 0 1 1 0-2h34a1 1 0 1 1 0 2z" />
+                    </svg>
+                </button>
+
+                <a id="nav-logo-black" href="https://jairosadventure.com/"><img src="assets/images/logo.png" class="nav-logo" alt="Jairos Adventures, African Safaris and Tours"></a>
+
+                <a id="nav-logo-white" href="https://jairosadventure.com/"><img src="assets/images/logo_white.png" class="nav-logo" alt="Jairos Adventures, African Safaris and Tours"></a>
+
+
+                <button data-drawer-trigger aria-controls="page-drawer-target" aria-expanded="false" id="menu-btn">
+                    <svg id="menu-btn-icon" viewBox="0 0 100 100">
+                        <path id="top-line-1" d="M30,37 L70,37 Z"></path>
+                        <path id="middle-line-1" d="M30,50 L70,50 Z"></path>
+                        <path id="bottom-line-1" d="M30,63 L70,63 Z"></path>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+
+
+    </header>
+
+    <main id="page-main" style="margin-top: 5em;">
+        <div id="page-main-inner">
+            <style>
+                .itinerary-list-card {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 1rem auto;
+                    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+                    margin-bottom: 1.6%;
+                    background: #fff;
+                    line-height: 1.4;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    z-index: 0;
+                }
+
+
+
+                .itinerary-list-card:hover .photo {
+                    transform: scale(1.3) rotate(3deg);
+                }
+
+                .itinerary-list-card .meta {
+                    position: relative;
+                    z-index: 0;
+                    height: 200px;
+                }
+
+                .itinerary-list-card .photo {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-size: cover;
+                    background-position: center;
+                    transition: transform 0.2s;
+                }
+
+                .itinerary-list-card .details,
+                .itinerary-list-card .details ul {
+                    margin: auto;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                .itinerary-list-card .details {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    /*left: -100%;*/
+                    left: 0%;
+                    margin: auto;
+                    transition: left 0.2s;
+                    background: rgba(0, 0, 0, 0.6);
+                    color: #fff;
+                    padding: 10px;
+                    width: 100%;
+                    font-size: 1.1rem;
+                }
+
+
+
+                .itinerary-list-card .description {
+                    padding: 1rem;
+                    background: #fff;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .itinerary-list-card .description h1,
+                .itinerary-list-card .description h2 {
+                    font-family: Poppins, sans-serif;
+                }
+
+                .itinerary-list-card .description h1 {
+                    line-height: 1;
+                    margin: 0;
+                    font-size: 1.7rem;
+                }
+
+                .itinerary-list-card .description h2 {
+                    font-size: 1rem;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    color: #a2a2a2;
+                    margin-top: 5px;
+                }
+
+                .itinerary-list-card .description .read-more {
+                    text-align: right;
+                }
+
+
+
+                .itinerary-list-card p {
+                    position: relative;
+                    margin: 1rem 0 0;
+                }
+
+                .itinerary-list-card p:first-of-type {
+                    margin-top: 1.25rem;
+                }
+
+                .itinerary-list-card p:first-of-type:before {
+                    content: "";
+                    position: absolute;
+                    height: 5px;
+                    background: #5ad67d;
+                    width: 35px;
+                    top: -0.75rem;
+                    border-radius: 3px;
+                }
+
+                .itinerary-list-card:hover .details {
+                    left: 0%;
+                    background: rgba(0, 0, 0, 0.1);
+                    color: rgb(168, 126, 9);
+                }
+
+                @media (min-width: 640px) {
+                    .itinerary-list-card {
+                        flex-direction: row;
+                        max-width: 1000px;
+                    }
+
+                    .itinerary-list-card .meta {
+                        flex-basis: 40%;
+                        height: auto;
+                    }
+
+                    .itinerary-list-card .description {
+                        flex-basis: 60%;
+                    }
+
+                    .itinerary-list-card .description:before {
+                        transform: skewX(-3deg);
+                        content: "";
+                        background: #fff;
+                        width: 30px;
+                        position: absolute;
+                        left: -10px;
+                        top: 0;
+                        bottom: 0;
+                        z-index: -1;
+                    }
+
+                    /*.itinerary-list-card.alt {
+                        flex-direction: row-reverse;
+                    }
+
+                    .itinerary-list-card.alt .description:before {
+                        left: inherit;
+                        right: -10px;
+                        transform: skew(3deg);
+                    }
+
+                    .itinerary-list-card.alt .details {
+                        padding-left: 25px;
+                    }
+                    */
+                }
+            </style>
+
+            <!-- iternaries view-->
+            <!--https://codepen.io/ChynoDeluxe/pen/bdXeqQ-->
+            <h1 class="section-heading">Tours & Safaris</h1>
+
+
+            <!--
+            <a href="/jhg" class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/image-1.jpg)"></div>
+                    <ul class="details">
+                        2 Days
+                    </ul>
+                </div>
+                <div class="description">
+                    <h1>2 Days Tanzania Safari</h1>
+                    <h2>Arusha, Ngorongoro, Tarangire</h2>
+                    <p>This two-day tour to the Tarangire National Park and Ngorongoro Crater in Tanzania</p>
+
+                </div>
+            </a>
+            -->
+
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/kili.jpg)"></div>
+                    <div class="details">
+                        6 days
+                    </div>
+                </div>
+                <div class="description">
+                    <h1>6 Days Kilimanjaro – Marangu Route</h1>
+                    <h2>Kilimanjaro</h2>
+                    <p>The journey between transports you to the golden dunes of the desert and up the soft beds of the ice fields before reaching the summit.</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/image-1.jpg)"></div>
+                    <ul class="details">
+                        2 Days
+                    </ul>
+                </div>
+                <div class="description">
+                    <h1>2 Days Tanzania Safari</h1>
+                    <h2>Arusha, Ngorongoro, Tarangire</h2>
+                    <p>This two-day tour to the Tarangire National Park and Ngorongoro Crater in Tanzania</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/kili.jpg)"></div>
+                    <div class="details">
+                        6 days
+                    </div>
+                </div>
+                <div class="description">
+                    <h1>6 Days Kilimanjaro – Marangu Route</h1>
+                    <h2>Kilimanjaro</h2>
+                    <p>The journey between transports you to the golden dunes of the desert and up the soft beds of the ice fields before reaching the summit.</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/image-1.jpg)"></div>
+                    <ul class="details">
+                        2 Days
+                    </ul>
+                </div>
+                <div class="description">
+                    <h1>2 Days Tanzania Safari</h1>
+                    <h2>Arusha, Ngorongoro, Tarangire</h2>
+                    <p>This two-day tour to the Tarangire National Park and Ngorongoro Crater in Tanzania</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/kili.jpg)"></div>
+                    <div class="details">
+                        6 days
+                    </div>
+                </div>
+                <div class="description">
+                    <h1>6 Days Kilimanjaro – Marangu Route</h1>
+                    <h2>Kilimanjaro</h2>
+                    <p>The journey between transports you to the golden dunes of the desert and up the soft beds of the ice fields before reaching the summit.</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/image-1.jpg)"></div>
+                    <ul class="details">
+                        2 Days
+                    </ul>
+                </div>
+                <div class="description">
+                    <h1>2 Days Tanzania Safari</h1>
+                    <h2>Arusha, Ngorongoro, Tarangire</h2>
+                    <p>This two-day tour to the Tarangire National Park and Ngorongoro Crater in Tanzania</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/kili.jpg)"></div>
+                    <div class="details">
+                        6 days
+                    </div>
+                </div>
+                <div class="description">
+                    <h1>6 Days Kilimanjaro – Marangu Route</h1>
+                    <h2>Kilimanjaro</h2>
+                    <p>The journey between transports you to the golden dunes of the desert and up the soft beds of the ice fields before reaching the summit.</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/image-1.jpg)"></div>
+                    <ul class="details">
+                        2 Days
+                    </ul>
+                </div>
+                <div class="description">
+                    <h1>2 Days Tanzania Safari</h1>
+                    <h2>Arusha, Ngorongoro, Tarangire</h2>
+                    <p>This two-day tour to the Tarangire National Park and Ngorongoro Crater in Tanzania</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/kili.jpg)"></div>
+                    <div class="details">
+                        6 days
+                    </div>
+                </div>
+                <div class="description">
+                    <h1>6 Days Kilimanjaro – Marangu Route</h1>
+                    <h2>Kilimanjaro</h2>
+                    <p>The journey between transports you to the golden dunes of the desert and up the soft beds of the ice fields before reaching the summit.</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/image-1.jpg)"></div>
+                    <ul class="details">
+                        2 Days
+                    </ul>
+                </div>
+                <div class="description">
+                    <h1>2 Days Tanzania Safari</h1>
+                    <h2>Arusha, Ngorongoro, Tarangire</h2>
+                    <p>This two-day tour to the Tarangire National Park and Ngorongoro Crater in Tanzania</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/kili.jpg)"></div>
+                    <div class="details">
+                        6 days
+                    </div>
+                </div>
+                <div class="description">
+                    <h1>6 Days Kilimanjaro – Marangu Route</h1>
+                    <h2>Kilimanjaro</h2>
+                    <p>The journey between transports you to the golden dunes of the desert and up the soft beds of the ice fields before reaching the summit.</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/image-1.jpg)"></div>
+                    <ul class="details">
+                        2 Days
+                    </ul>
+                </div>
+                <div class="description">
+                    <h1>2 Days Tanzania Safari</h1>
+                    <h2>Arusha, Ngorongoro, Tarangire</h2>
+                    <p>This two-day tour to the Tarangire National Park and Ngorongoro Crater in Tanzania</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="itinerary-list-card">
+                <div class="meta">
+                    <div class="photo" style="background-image: url(assets/images/itineraries_list/kili.jpg)"></div>
+                    <div class="details">
+                        6 days
+                    </div>
+                </div>
+                <div class="description">
+                    <h1>6 Days Kilimanjaro – Marangu Route</h1>
+                    <h2>Kilimanjaro</h2>
+                    <p>The journey between transports you to the golden dunes of the desert and up the soft beds of the ice fields before reaching the summit.</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- end of itineraries view-->
+        </div>
+        <!--end of main section-->
+    </main>
+
+    <footer id="page-footer">
+        <div id="footer-link-wrapper" class="footer-inner">
+
+            <div id="contacts-box">
+                <h5 class="footer-link-h5">Contact us</h5>
+                <div class="contact-contents">
+                    <div class="item" data-icon="email"><a style="color:white" href="mailto:info@jairosadventure.com">info@jairosadventure.com</a></div>
+                    <div class="item" data-icon="phone">+255685 000 070</div>
+                    <div class="item" data-icon="address">Swahili Street, Uchaguzi Road
+                    </div>
+                </div>
+            </div>
+            <div id="accommodations-box">
+                <h5 class="footer-link-h5">Top Destinations</h5>
+                <ul id="accomo-links">
+                    <li><a href="https://jairosadventure.com/serengeti-national-park/" target="_blank" rel="nofollow">Serengeti National Park</a></li>
+                    <li><a href="https://jairosadventure.com/ngorongoro-conservation-area/" target="_blank" rel="nofollow">Ngorongoro Conservation Area</a></li>
+                    <li><a href="https://jairosadventure.com/tarangire-national-park/" target="_blank" rel="nofollow">Tarangire National Park</a></li>
+                    <li><a href="https://jairosadventure.com/arusha-national-park/" target="_blank" rel="nofollow">Arusha National Park</a></li>
+                    <li><a href="https://jairosadventure.com/nyerere-national-park/" target="_blank" rel="nofollow">Nyerere National Park</a></li>
+                    <li><a href="https://jairosadventure.com/lake-manyara-national-park/" target="_blank" rel="nofollow">Lake Manyara National Park</a></li>
+                    <li><a href="https://jairosadventure.com/ruaha-national-park/" target="_blank" rel="nofollow">Ruaha National Park</a></li>
+                    <li><a href="https://jairosadventure.com/mikumi-national-park/" target="_blank" rel="nofollow">Mikumi National Park</a></li>
+                    <li><a href="https://jairosadventure.com/zanzibar/" target="_blank" rel="nofollow">Zanzibar</a></li>
+
+                </ul>
+            </div>
+            <div id="nominee-box">
+                <style>
+                    #social-bar {
+                        list-style: none;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: flex-end;
+                        justify-content: center;
+                        background: transparent;
+                        margin: 0;
+                        padding: 0.75em 0em;
+                    }
+
+                    #social-bar li {
+                        display: inline-block;
+                    }
+
+                    #social-bar li a {
+                        padding: 0 1em;
+                    }
+
+                    #social-bar li svg {
+                        width: 3em;
+                        color: #fff;
+                    }
+
+                    #facebook:hover svg {
+                        color: #4267B2;
+                    }
+
+                    #instagram:hover svg {
+                        color: #c13584;
+                    }
+
+                    #twitter:hover svg {
+                        color: #1DA1F2;
+                    }
+
+                    #tripadvisor:hover svg {
+                        color: #00af87;
+                    }
+                </style>
+                <ul id="social-bar">
+                    <li><a id="facebook" href="https://www.facebook.com/jairosadventures3" title="Facebook">
+                            <svg fill="currentColor" viewBox="0 0 512 512">
+                                <path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="https://www.instagram.com/jairosadventures/" id="instagram" title="Instagram">
+                            <svg fill="currentColor" viewBox="0 0 512 512">
+                                <g>
+                                    <path
+                                        d="M256 109.3c47.8 0 53.4 0.2 72.3 1 17.4 0.8 26.9 3.7 33.2 6.2 8.4 3.2 14.3 7.1 20.6 13.4 6.3 6.3 10.1 12.2 13.4 20.6 2.5 6.3 5.4 15.8 6.2 33.2 0.9 18.9 1 24.5 1 72.3s-0.2 53.4-1 72.3c-0.8 17.4-3.7 26.9-6.2 33.2 -3.2 8.4-7.1 14.3-13.4 20.6 -6.3 6.3-12.2 10.1-20.6 13.4 -6.3 2.5-15.8 5.4-33.2 6.2 -18.9 0.9-24.5 1-72.3 1s-53.4-0.2-72.3-1c-17.4-0.8-26.9-3.7-33.2-6.2 -8.4-3.2-14.3-7.1-20.6-13.4 -6.3-6.3-10.1-12.2-13.4-20.6 -2.5-6.3-5.4-15.8-6.2-33.2 -0.9-18.9-1-24.5-1-72.3s0.2-53.4 1-72.3c0.8-17.4 3.7-26.9 6.2-33.2 3.2-8.4 7.1-14.3 13.4-20.6 6.3-6.3 12.2-10.1 20.6-13.4 6.3-2.5 15.8-5.4 33.2-6.2C202.6 109.5 208.2 109.3 256 109.3M256 77.1c-48.6 0-54.7 0.2-73.8 1.1 -19 0.9-32.1 3.9-43.4 8.3 -11.8 4.6-21.7 10.7-31.7 20.6 -9.9 9.9-16.1 19.9-20.6 31.7 -4.4 11.4-7.4 24.4-8.3 43.4 -0.9 19.1-1.1 25.2-1.1 73.8 0 48.6 0.2 54.7 1.1 73.8 0.9 19 3.9 32.1 8.3 43.4 4.6 11.8 10.7 21.7 20.6 31.7 9.9 9.9 19.9 16.1 31.7 20.6 11.4 4.4 24.4 7.4 43.4 8.3 19.1 0.9 25.2 1.1 73.8 1.1s54.7-0.2 73.8-1.1c19-0.9 32.1-3.9 43.4-8.3 11.8-4.6 21.7-10.7 31.7-20.6 9.9-9.9 16.1-19.9 20.6-31.7 4.4-11.4 7.4-24.4 8.3-43.4 0.9-19.1 1.1-25.2 1.1-73.8s-0.2-54.7-1.1-73.8c-0.9-19-3.9-32.1-8.3-43.4 -4.6-11.8-10.7-21.7-20.6-31.7 -9.9-9.9-19.9-16.1-31.7-20.6 -11.4-4.4-24.4-7.4-43.4-8.3C310.7 77.3 304.6 77.1 256 77.1L256 77.1z">
+                                    </path>
+                                    <path d="M256 164.1c-50.7 0-91.9 41.1-91.9 91.9s41.1 91.9 91.9 91.9 91.9-41.1 91.9-91.9S306.7 164.1 256 164.1zM256 315.6c-32.9 0-59.6-26.7-59.6-59.6s26.7-59.6 59.6-59.6 59.6 26.7 59.6 59.6S288.9 315.6 256 315.6z"></path>
+                                    <circle cx="351.5" cy="160.5" r="21.5"></circle>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="https://twitter.com/jairosadventur1" id="twitter" title="Twitter">
+                            <svg fill="currentColor" viewBox="0 0 512 512">
+                                <path d="M512 97c-19 9-39 14-60 17 21-13 38-34 46-58-21 12-43 20-67 25a105 105 0 0 0-179 96c-87-4-164-46-216-110a106 106 0 0 0 32 140c-17 0-34-5-48-13v2c0 51 37 93 85 103a105 105 0 0 1-48 1c14 42 52 73 98 74A211 211 0 0 1 0 417c46 30 102 47 161 47a297 297 0 0 0 298-312c21-15 39-34 53-55z" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li><a href="https://www.tripadvisor.com/Attraction_Review-g317084-d16714042-Reviews-Jairos_Adventures-Moshi_Kilimanjaro_Region.html" id="tripadvisor" title="Trip Advisor">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                                <path d="M256.008 188.207c30.901-32.699 74.399-52.2 120-52.2h58.5c-46.8-38.101-110.7-60-178.5-60s-131.4 21.599-178.2 60h58.2c42.633.001 88.8 19.501 120 52.2zM135.008 256.008c-24.901 0-45 20.099-45 45s20.099 45 45 45 45-20.099 45-45-20.1-45-45-45zm0 60c-8.401 0-15-6.599-15-15s6.599-15 15-15 15 6.599 15 15-6.6 15-15 15z"></path>
+                                <path
+                                    d="M496.561 215.206l13.947-27.599c2.1-4.499 2.1-10.199-.601-14.399-2.999-4.499-7.8-7.2-12.9-7.2h-120c-50.7 0-98.5 29.7-121 73.2-23.401-44.7-71.499-73.2-121-73.2h-120c-5.099 0-9.901 2.701-12.9 7.2-2.701 4.2-2.701 9.901-.601 14.399l13.949 27.596C5.456 240.037.006 277.145.006 301.008c0 74.399 60.601 135 135 135 34.799 0 67.2-13.2 92.1-36.899.042-.037.075-.084.117-.121l15.365 28.729a15.006 15.006 0 0013.418 8.291 15.006 15.006 0 0013.418-8.291l14.464-28.927c.007.005 1.011.013 1.018.018 25.501 24.6 58.2 37.2 92.1 37.2 74.399 0 135-60.601 135-135 .002-23.905-5.458-60.994-15.445-85.802zM135.008 376.008c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75zm121 11.455l-6.705-13.411c.033-.051.073-.093.106-.145v-.3c2.399-3.6 4.499-7.2 6.599-10.8 2.1 3.6 4.2 7.2 6.899 10.8l.016.024-6.915 13.832zm121-11.455c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75z">
+                                </path>
+                                <path d="M377.008 256.008c-24.901 0-45 20.099-45 45s20.099 45 45 45 45-20.099 45-45-20.1-45-45-45zm0 60c-8.401 0-15-6.599-15-15s6.599-15 15-15 15 6.599 15 15-6.6 15-15 15z"></path>
+                            </svg>
+
+                        </a>
+                    </li>
+                </ul>
+                <img loading="lazy" style="width:80%;align-self: center;" src="assets/images/ttb.jpg" />
+            </div>
+        </div>
+        <div>
+            <div id="copyright-wrapper">© 2021 Jairos Adventures. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="assets/bundle.js"></script>
+
+</body>
+
+</html>
